@@ -4,5 +4,6 @@ Click on the option to view users posts. -> Click on the post to view comments o
 Click on the option to view users albums. -> Click on album to view photos in the album
 Run these commands in your terminal to run the project
 npm install
+
 npm start
 
