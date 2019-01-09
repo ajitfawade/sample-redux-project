@@ -1,14 +1,14 @@
-import axios from 'axios';
+import { get, post, put, deleteItem } from '../utilities/HTTP';
 import { IUserModelProps, UserModel } from '../Models/UserModel';
 
 export async function getUsers() {
-    const url = 'https://jsonplaceholder.typicode.com/users';
+    const url = 'users';
     try {
-        let response = await axios.get(url);
-        let users = response.data.items;
-        console.log('Printing Response: ', response);
-        console.log('printing users: ',users);
-    } catch(error) {
+        let response = await get(url);
+        if (response.data.length) {
+            UserModel.saveAll(response.data.map(item => new UserModel(item)));
+        }
+    } catch (error) {
         throw error;
     }
 }

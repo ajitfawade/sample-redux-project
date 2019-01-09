@@ -23,7 +23,7 @@ export interface IUserModelProps {
         name?: string,
         catchPhrase?: string,
         bs?: string,
-    }
+    };
 }
 
 export class UserModel extends BaseModel<IUserModelProps> {
